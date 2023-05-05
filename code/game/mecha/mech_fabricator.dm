@@ -29,6 +29,7 @@
 								"Gygax",
 								"Durand",
 								"H.O.N.K",
+								"C.H.O.N.K",
 								"Phazon",
 								"Exosuit Equipment",
 								"Cyborg Upgrade Modules",

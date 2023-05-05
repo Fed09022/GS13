@@ -34,6 +34,22 @@
 	category = list("Exosuit Modules")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
+/datum/design/board/chonker_main
+	name = "\"C.H.O.N.K\" Central Control module"
+	desc = "Allows for the construction of a \"C.H.O.N.K\" Central Control module."
+	id = "chonker_main"
+	build_path = /obj/item/circuitboard/mecha/chonker/main
+	category = list("Exosuit Modules")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/board/chonker_peri
+	name = "\"C.H.O.N.K\" Peripherals Control module"
+	desc = "Allows for the construction of a \"C.H.O.N.K\" Peripheral Control module."
+	id = "chonker_peri"
+	build_path = /obj/item/circuitboard/mecha/chonker/peripherals
+	category = list("Exosuit Modules")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
 /datum/design/board/gygax_main
 	name = "\"Gygax\" Central Control module"
 	desc = "Allows for the construction of a \"Gygax\" Central Control module."
@@ -395,4 +411,24 @@
 	materials = list(MAT_METAL = 15000, MAT_GLASS = 8000, MAT_PLASMA = 3000, MAT_GOLD = 8000, MAT_DIAMOND = 2000)
 	construction_time = 250
 	build_path = /obj/item/mecha_parts/mecha_equipment/medical/mechmedbeam
+	category = list("Exosuit Equipment")
+
+/datum/design/mech_blob_cannon
+	name = "Exosuit Medical Equipment (Mounted Sleeper)"
+	desc = "Equipment for medical exosuits. A mounted sleeper that stabilizes patients and can inject reagents in the exosuit's reserves."
+	id = "mech_sleeper"
+	build_type = MECHFAB
+	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/chonker/blob_cannon
+	materials = list(MAT_CALORITE=10000)
+	construction_time = 100
+	category = list("Exosuit Equipment")
+
+/datum/design/mech_adipose_generator
+	name = "Exosuit Module (Mounted Adipose Generator)"
+	desc = "Equipment for C.H.O.N.K exosuits. A mounted sleeper that draws power from burning the fat of the occupant."
+	id = "mech_adipose_generator"
+	build_type = MECHFAB
+	build_path = /obj/item/mecha_parts/mecha_equipment/chonker/fat_generator
+	materials = list(MAT_CALORITE=5000,MAT_GLASS=10000)
+	construction_time = 100
 	category = list("Exosuit Equipment")

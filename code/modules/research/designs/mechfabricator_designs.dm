@@ -191,6 +191,70 @@
 	construction_time = 130
 	category = list("Odysseus")
 
+//C.H.O.N.K
+/datum/design/chonker_chassis
+	name = "Exosuit Chassis (\"C.H.O.N.K\")"
+	id = "chonker_chassis"
+	build_type = MECHFAB
+	build_path = /obj/item/mecha_parts/chassis/chonker
+	materials = list(MAT_CALORITE=20000)
+	construction_time = 100
+	category = list("C.H.O.N.K")
+
+/datum/design/chonker_torso
+	name = "Exosuit Torso (\"C.H.O.N.K\")"
+	id = "chonker_torso"
+	build_type = MECHFAB
+	build_path = /obj/item/mecha_parts/part/chonker_torso
+	materials = list(MAT_CALORITE=12000)
+	construction_time = 180
+	category = list("C.H.O.N.K")
+
+/datum/design/chonker_head
+	name = "Exosuit Head (\"C.H.O.N.K\")"
+	id = "chonker_head"
+	build_type = MECHFAB
+	build_path = /obj/item/mecha_parts/part/chonker_head
+	materials = list(MAT_CALORITE=6000,MAT_GLASS=10000)
+	construction_time = 100
+	category = list("C.H.O.N.K")
+
+/datum/design/chonker_left_arm
+	name = "Exosuit Left Arm (\"C.H.O.N.K\")"
+	id = "chonker_left_arm"
+	build_type = MECHFAB
+	build_path = /obj/item/mecha_parts/part/chonker_left_arm
+	materials = list(MAT_CALORITE=6000)
+	construction_time = 120
+	category = list("C.H.O.N.K")
+
+/datum/design/chonker_right_arm
+	name = "Exosuit Right Arm (\"C.H.O.N.K\")"
+	id = "chonker_right_arm"
+	build_type = MECHFAB
+	build_path = /obj/item/mecha_parts/part/chonker_right_arm
+	materials = list(MAT_CALORITE=6000)
+	construction_time = 120
+	category = list("C.H.O.N.K")
+
+/datum/design/chonker_left_leg
+	name = "Exosuit Left Leg (\"C.H.O.N.K\")"
+	id = "chonker_left_leg"
+	build_type = MECHFAB
+	build_path = /obj/item/mecha_parts/part/chonker_left_leg
+	materials = list(MAT_CALORITE=7000)
+	construction_time = 130
+	category = list("C.H.O.N.K")
+
+/datum/design/chonker_right_leg
+	name = "Exosuit Right Leg (\"C.H.O.N.K\")"
+	id = "chonker_right_leg"
+	build_type = MECHFAB
+	build_path = /obj/item/mecha_parts/part/chonker_right_leg
+	materials = list(MAT_CALORITE=7000)
+	construction_time = 130
+	category = list("C.H.O.N.K")
+
 //Gygax
 /datum/design/gygax_chassis
 	name = "Exosuit Chassis (\"Gygax\")"

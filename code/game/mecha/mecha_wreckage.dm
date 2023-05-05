@@ -267,3 +267,22 @@
 			var/part = pick(parts)
 			welder_salvage += part
 			parts -= part
+
+/obj/structure/mecha_wreckage/chonker
+	name = "\improper C.H.O.N.K wreckage"
+	icon_state = "chonker-broken"
+
+/obj/structure/mecha_wreckage/chonker/Initialize()
+	. = ..()
+	var/list/parts = list(
+								/obj/item/mecha_parts/part/chonker_torso,
+								/obj/item/mecha_parts/part/chonker_head,
+								/obj/item/mecha_parts/part/chonker_left_arm,
+								/obj/item/mecha_parts/part/chonker_right_arm,
+								/obj/item/mecha_parts/part/chonker_left_leg,
+								/obj/item/mecha_parts/part/chonker_right_leg)
+	for(var/i = 0; i < 2; i++)
+		if(parts.len && prob(40))
+			var/part = pick(parts)
+			welder_salvage += part
+			parts -= part

@@ -1172,3 +1172,15 @@
 	boost_item_paths = list(/obj/item/gun/energy/fatoray, /obj/item/gun/energy/fatoray/cannon, /obj/item/trash/fatoray_scrap1, /obj/item/trash/fatoray_scrap2)
 	export_price = 10000
 	hidden = TRUE
+
+/datum/techweb_node/chonker
+	id = "mecha_chonker"
+	display_name = "EXOSUIT: C.H.O.N.K"
+	description = "C.H.O.N.K exosuit designs and advanced Calorite equipment"
+	prereq_ids = list("adv_mecha_modules", "adv_weaponry", "nutritech")
+	design_ids = list("chonker_chassis", "chonker_torso", "chonker_head", "chonker_left_arm", "chonker_right_arm" ,"chonker_left_leg", "chonker_right_leg",
+	"chonker_main", "chonker_peri")
+	boost_item_paths = list(/obj/item/gun/energy/fatoray, /obj/item/gun/energy/fatoray/cannon)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	export_price = 5000
+	hidden = TRUE

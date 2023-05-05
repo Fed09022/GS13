@@ -87,6 +87,42 @@
 	desc = "An odysseus right leg. Contains complex servodrives and balance maintaining systems to maintain stability for critical patients."
 	icon_state = "odysseus_r_leg"
 
+///////// C.H.O.N.K
+
+/obj/item/mecha_parts/chassis/chonker
+	name = "\improper C.H.O.N.K chassis"
+	construct_type = /datum/component/construction/unordered/mecha_chassis/chonker
+
+/obj/item/mecha_parts/part/chonker_head
+	name = "\improper C.H.O.N.K head"
+	desc = "An C.H.O.N.K head. Contains an integrated medical HUD scanner."
+	icon_state = "chonker_head"
+
+/obj/item/mecha_parts/part/chonker_torso
+	name = "\improper C.H.O.N.K torso"
+	desc="A torso part of C.H.O.N.K. Contains power unit, processing core and life support systems along with an attachment port for a mounted sleeper."
+	icon_state = "chonker_torso"
+
+/obj/item/mecha_parts/part/chonker_left_arm
+	name = "\improper C.H.O.N.K left arm"
+	desc = "An C.H.O.N.K left arm. Data and power sockets are compatible with specialized medical equipment."
+	icon_state = "chonker_l_arm"
+
+/obj/item/mecha_parts/part/chonker_right_arm
+	name = "\improper C.H.O.N.K right arm"
+	desc = "An C.H.O.N.K right arm. Data and power sockets are compatible with specialized medical equipment."
+	icon_state = "chonker_r_arm"
+
+/obj/item/mecha_parts/part/chonker_left_leg
+	name = "\improper C.H.O.N.K left leg"
+	desc = "An C.H.O.N.K left leg. Contains complex servodrives and balance maintaining systems to maintain stability for critical patients."
+	icon_state = "chonker_l_leg"
+
+/obj/item/mecha_parts/part/chonker_right_leg
+	name = "\improper C.H.O.N.K right leg"
+	desc = "An C.H.O.N.K right leg. Contains complex servodrives and balance maintaining systems to maintain stability for critical patients."
+	icon_state = "chonker_r_leg"
+
 ///////// Gygax
 
 /obj/item/mecha_parts/chassis/gygax
@@ -325,6 +361,14 @@
 
 /obj/item/circuitboard/mecha/odysseus/main
 	name = "Odysseus Central Control module (Exosuit Board)"
+	icon_state = "mainboard"
+
+/obj/item/circuitboard/mecha/chonker/peripherals
+	name = "C.H.O.N.K Peripherals Control module (Exosuit Board)"
+	icon_state = "mcontroller"
+
+/obj/item/circuitboard/mecha/chonker/main
+	name = "C.H.O.N.K Central Control module (Exosuit Board)"
 	icon_state = "mainboard"
 
 /obj/item/circuitboard/mecha/phazon/peripherals
