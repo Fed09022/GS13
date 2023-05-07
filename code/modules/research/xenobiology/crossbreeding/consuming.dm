@@ -433,3 +433,32 @@ Consuming extracts:
 	S.desc = "A beautiful rainbow cookie, constantly shifting colors in the light."
 	S.icon_state = "rainbow"
 	return S
+
+/obj/item/slimecross/consuming/calorite
+	colour = "calorite"
+	cookietype = /obj/item/slime_cookie/calorite
+
+/obj/item/slime_cookie/calorite
+	name = "calorite cookie"
+	desc = "A chunk of calorite in the shape of a cookie. Surprisingly soft."
+	icon_state = "calorite"
+	taste = "lard and fat"
+	nutrition = 0 //We don't want normal nutriment
+
+/obj/item/slime_cookie/calorite/do_effect(mob/living/M, mob/user)
+	M.reagents.add_reagent(/datum/reagent/consumable/lipoifier, 200)
+
+/obj/item/slimecross/consuming/power
+	colour = "power"
+	cookietype = /obj/item/slime_cookie/power
+/*
+/obj/item/slime_cookie/power
+	name = "power cookie"
+	desc = "A translucent rock candy in the shape of a cookie. Surprisingly chewy."
+	icon_state = "calorite"
+	taste = "lard and fat"
+	nutrition = 0 //We don't want normal nutriment
+
+/obj/item/slime_cookie/calorite/do_effect(mob/living/M, mob/user)
+	M.reagents.add_reagent(/datum/reagent/consumable/lipoifier, 200)
+*/

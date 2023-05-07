@@ -45,6 +45,18 @@
 		new /obj/item/reagent_containers/food/snacks/monkeycube(get_turf(holder.my_atom))
 	..()
 
+/datum/chemical_reaction/slime/caloriteslimespawn
+	name = "Calorite Slime Spawn"
+	id = "m_calspawn"
+	required_reagents = list(/datum/reagent/consumable/lipoifier = 1)
+	required_container = /obj/item/slime_extract/grey
+	required_other = TRUE
+
+/datum/chemical_reaction/slime/slimespawn/on_reaction(datum/reagents/holder)
+	var/mob/living/simple_animal/slime/S = new(get_turf(holder.my_atom), "calorite")
+	S.visible_message("<span class='danger'>Infused with lipoifier, the core begins to quiver and grow, and a new baby slime emerges from it!</span>")
+	..()
+
 //Green
 /datum/chemical_reaction/slime/slimemutate
 	name = "Mutation Toxin"
@@ -743,4 +755,186 @@
 	required_reagents = list(/datum/reagent/silicon = 1) //It'd be annoying to make it require synthflesh, so this will work
 	required_other = TRUE
 	required_container = /obj/item/slime_extract/green
+
+// Calorite
+/datum/chemical_reaction/slime/slimelipoifier
+	name = "Slime lipoifier"
+	id = "m_lipoifier"
+	results = list(/datum/reagent/consumable/lipoifier = 5)
+	required_reagents = list(/datum/reagent/toxin/plasma = 1)
+	required_container = /obj/item/slime_extract/calorite
+	required_other = TRUE
+
+/datum/chemical_reaction/slime/calorite
+	name = "Calorite"
+	id = "calorite"
+	required_reagents = list(/datum/reagent/blood = 1)
+	required_container = /obj/item/slime_extract/calorite
+	required_other = TRUE
+
+/datum/chemical_reaction/slime/calorite/on_reaction(datum/reagents/holder)
+	new /obj/item/stack/sheet/mineral/calorite(get_turf(holder.my_atom))
+	..()
+
+/datum/chemical_reaction/slime/imbuecalorite
+	name = "Imbue Calorite Potion"
+	id = "m_imbue_calorite_potion"
+	required_reagents = list(/datum/reagent/water = 1)
+	required_container = /obj/item/slime_extract/calorite
+	required_other = TRUE
+
+/datum/chemical_reaction/slime/imbuecalorite/on_reaction(datum/reagents/holder)
+	new /obj/item/slimepotion/imbuecalorite(get_turf(holder.my_atom))
+	..()
+
+// Power
+/datum/chemical_reaction/slime/slimegeneratearc
+	name = "Slime Electric Arc"
+	id = "m_electric_arc"
+	required_reagents = list(/datum/reagent/toxin/plasma = 5)
+	required_container = /obj/item/slime_extract/power
+	required_other = TRUE
+	deletes_extract = FALSE
+
+/datum/chemical_reaction/slime/slimegeneratearc/on_reaction(datum/reagents/holder)
+// gaaahhh coding stuffff
+
+/datum/chemical_reaction/slime/slimedrainfatforpower
+	name = "Slime Drain Fat"
+	id = "m_drain_fat_power"
+	required_reagents = list(/datum/reagent/blood = 1)
+	required_container = /obj/item/slime_extract/power
+	required_other = TRUE
+	deletes_extract = FALSE
+
+/datum/chemical_reaction/slime/slimedrainfatforpower/on_reaction(datum/reagents/holder)
+// gaaahhh coding stuffff
+
+/datum/chemical_reaction/slime/slimeshortcircuit
+	name = "Slime Short Circuit"
+	id = "m_short_circuit"
+	required_reagents = list(/datum/reagent/water = 1)
+	required_container = /obj/item/slime_extract/power
+	required_other = TRUE
+
+/datum/chemical_reaction/slime/slimeshortcircuit/on_reaction(datum/reagents/holder)
+	user.visible_message("<span class='danger'>[src] explodes into an electrical field!</span>")
+	playsound(get_turf(holder.my_atom), 'sound/weapons/zapbang.ogg', 50, 1)
+	for(var/mob/living/M in range(1,get_turf(holder.my_atom)))
+		var/mob/living/carbon/C = M
+		if(istype(C))
+			C.electrocute_act(25,src)
+		else
+			M.adjustFireLoss(25)
+		to_chat(M, "<span class='danger'>You feel a sharp electrical pulse!</span>")
+	..()
+
+// Transformation
+/datum/chemical_reaction/slime/slimeprospacillin
+	name = "Slime Prospacillin"
+	id = "m_prospacillin"
+	results = list(/datum/reagent/growthchem = 1)
+	required_reagents = list(/datum/reagent/toxin/plasma = 1)
+	required_container = /obj/item/slime_extract/transformation
+	required_other = TRUE
+
+/datum/chemical_reaction/slime/slimediminicillin
+	name = "Slime Diminicillin"
+	id = "m_diminicillin"
+	results = list(/datum/reagent/shrinkchem = 1)
+	required_reagents = list(/datum/reagent/blood = 1)
+	required_container = /obj/item/slime_extract/transformation
+	required_other = TRUE
+
+/datum/chemical_reaction/slime/slimebuttpill
+	name = "Slime Butt Enlargement Pill"
+	id = "m_butt_pill"
+	required_reagents = list(/datum/reagent/water = 1)
+	required_container = /obj/item/slime_extract/transformation
+	required_other = TRUE
+
+/datum/chemical_reaction/slime/transformation/on_reaction(datum/reagents/holder)
+	new /obj/item/reagent_containers/pill/butt_enlargement(get_turf(holder.my_atom))
+	..()
+
+/datum/chemical_reaction/slime/slimepenispill
+	name = "Slime Penis Enlargement Pill"
+	id = "m_penis_pill"
+	required_reagents = list(/datum/reagent/consumable/semen= 1)
+	required_container = /obj/item/slime_extract/transformation
+	required_other = TRUE
+
+/datum/chemical_reaction/slime/transformation/on_reaction(datum/reagents/holder)
+	new /obj/item/reagent_containers/pill/penis_enlargement(get_turf(holder.my_atom))
+	..()
+
+/datum/chemical_reaction/slime/slimebreastpill
+	name = "Slime Breast Enlargement Pill"
+	id = "m_breast_pill"
+	required_reagents = list(/datum/reagent/consumable/milk = 1)
+	required_container = /obj/item/slime_extract/transformation
+	required_other = TRUE
+
+/datum/chemical_reaction/slime/transformation/on_reaction(datum/reagents/holder)
+	new /obj/item/reagent_containers/pill/breast_enlargement(get_turf(holder.my_atom))
+	..()
+
+// Gaseous
+/datum/chemical_reaction/slime/slimegenerategas
+	name = "Slime Gas Leak"
+	id = "m_gas_leak"
+	required_reagents = list(/datum/reagent/toxin/plasma = 1)
+	required_container = /obj/item/slime_extract/gaseous
+	required_other = TRUE
+
+/datum/chemical_reaction/slime/slimegenerategas/on_reaction(datum/reagents/holder)
+// gaaahhh coding stuffff
+
+/datum/chemical_reaction/slime/slimeflatulose
+	name = "Slime Flatulose"
+	id = "m_flatulose"
+	results = list(/datum/reagent/consumable/flatulose = 5)
+	required_reagents = list(/datum/reagent/blood = 1)
+	required_container = /obj/item/slime_extract/gaseous
+	required_other = TRUE
+
+/datum/chemical_reaction/slime/slimefizulphite
+	name = "Slime Fizulphite"
+	id = "m_fizulphite"
+	results = list(/datum/reagent/consumable/fizulphite = 5)
+	required_reagents = list(/datum/reagent/water = 1)
+	required_container = /obj/item/slime_extract/gaseous
+	required_other = TRUE
+
+// Feeding
+/datum/chemical_reaction/slime/feedingslimemultispawn
+	name = "Feeding Slime Explosion"
+	id = "m_feeding_slime_explosion"
+	required_reagents = list(/datum/reagent/toxin/plasma = 1)
+	required_container = /obj/item/slime_extract/feeding
+	required_other = TRUE
+	deletes_extract = FALSE //we do delete, but we don't do so instantly
+
+/datum/chemical_reaction/slime/feedingslimemultispawn/on_reaction(datum/reagents/holder)
+	var/turf/T = get_turf(holder.my_atom)
+	summon_mobs(holder, T)
+	var/obj/item/slime_extract/M = holder.my_atom
+	deltimer(M.qdel_timer)
+	..()
+	M.qdel_timer = addtimer(CALLBACK(src, .proc/delete_extract, holder), 55, TIMER_STOPPABLE)
+
+/datum/chemical_reaction/slime/feedingslimemultispawn/proc/summon_mobs(datum/reagents/holder, turf/T)
+	T.visible_message("<span class='danger'>The slime extract begins to vibrate violently!</span>")
+	addtimer(CALLBACK(src, .proc/chemical_mob_spawn, holder, rand(3,5), "Feeding Slime", HOSTILE_SPAWN), 50) // have to change this to feeding slimes
+
+/datum/chemical_reaction/slime/slimehyperblobpotion
+	name = "Slime Hyper-Blob Potion"
+	id = "m_hyper_blob_potion"
+	required_reagents = list(/datum/reagent/blood = 1)
+	required_container = /obj/item/slime_extract/gaseous
+	required_other = TRUE
+
+/datum/chemical_reaction/slime/hyperblobpotion/on_reaction(datum/reagents/holder)
+	new /obj/item/slimepotion/hyperblobpotion(get_turf(holder.my_atom))
+	..()
 

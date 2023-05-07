@@ -70,6 +70,12 @@
 			slime_mutation[2] = "green"
 			slime_mutation[3] = "black"
 			slime_mutation[4] = "black"
+		// GS Slimes
+		if("calorite")
+			slime_mutation[1] = "power"
+			slime_mutation[2] = "transformation"
+			slime_mutation[3] = "gaseous"
+			slime_mutation[4] = "feeding"
 		// Tier 5
 		else
 			slime_mutation[1] = colour
